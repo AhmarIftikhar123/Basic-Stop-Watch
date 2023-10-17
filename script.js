@@ -38,10 +38,12 @@ let start_time = () => {
 start_btn.addEventListener("click", () => {
   if (start_btn.children[0].classList.contains("fa-play")) {
     start_btn.children[0].classList.replace("fa-play", "fa-pause");
-  } else {
-    start_btn.children[0].classList.add("fa-play");
-  }
   start_time();
+  } else {
+    start_btn.children[0].classList.replace("fa-pause", "fa-play");
+  clearInterval(timer);
+    timer = null;
+  }
 });
 
 stop_btn.addEventListener("click", () => {
